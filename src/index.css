@@ -203,4 +203,51 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--gradient-accent);
   }
+
+  .metallic-text {
+  background: linear-gradient(90deg, #aaa, #ddd, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+.glow-cursor {
+  pointer-events: none;
+  z-index: 9999;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
+  border-radius: 50%;
+  mix-blend-mode: lighten;
+  transition: transform 0.1s ease;
+}
+
+.text-3d-dark {
+  color: #0e0e0e;
+  font-weight: 900;
+  text-shadow:
+    1px 1px 0 #1c1c1c,
+    2px 2px 0 #2a2a2a,
+    3px 3px 0 #00000030;
+}
+
+.text-3d-red {
+  color: #CB0404;
+  font-weight: 900;
+  text-shadow:
+    1px 1px 0 #8b0000,
+    2px 2px 0 #610000,
+    3px 3px 0 #450000;
+}
+
 }

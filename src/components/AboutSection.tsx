@@ -1,97 +1,146 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+
+const fadeInUp: Variants= {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut", // ✅ Valid string for Framer Motion
+    },
+  },
+};
+
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-muted/30">
+    <section id="about" className="section-padding bg-[#f9f9f9] text-[#1a1a1a]">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="hero-gradient">Me</span>
+        {/* Heading */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-5xl font-bold mb-4">
+            About <span className="text-[#CB0404]">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-        </div>
+          <div className="h-1 w-24 bg-[#CB0404] mx-auto rounded-full"></div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Bio Content */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                I'm a passionate <span className="text-primary font-semibold">B.Tech Computer Science student </span> with 
-                an insatiable curiosity for creating digital experiences that seamlessly blend functionality with aesthetics. 
-                My journey in tech is driven by the belief that great design and robust code can transform how people 
-                interact with technology.
-              </p>
-              
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                As a <span className="text-secondary font-semibold">frontend developer</span> and{' '}
-                <span className="text-accent font-semibold">UI/UX designer</span>, I thrive at the intersection of 
-                creativity and technology. Whether I'm crafting pixel-perfect interfaces, building interactive web 
-                applications, or leading design initiatives in developer communities, I bring a unique perspective 
-                that bridges the gap between design and development.
-              </p>
-              
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                My active involvement in developer communities has taught me the value of collaboration, knowledge 
-                sharing, and continuous learning. I believe in building not just great products, but also fostering 
-                environments where creativity and innovation can flourish.
-              </p>
-            </div>
+        {/* Grid Content */}
+        <div className="grid md:grid-cols-3 gap-10 items-start">
+          {/* LEFT COLUMN: Intro */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-6 col-span-1"
+          >
+            <p className="text-lg leading-relaxed">
+              I’m <span className="font-semibold text-[#CB0404]">Udity Banerjee</span>, a final-year B.Tech Computer Science student passionate about merging technology and creativity.
+              With a love for frontend development and a knack for UI/UX design, I transform ideas into elegant digital experiences.
+            </p>
+            <p className="text-lg leading-relaxed">
+              I'm actively involved in communities and have led initiatives at platforms like GDSC, Digital Dominators, and Hack4Bengal. My goal? Craft intuitive, accessible, and impactful designs powered by robust code.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Let’s build tech that’s not just functional—but beautiful and human-centric.
+            </p>
+          </motion.div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold hero-gradient">4+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold hero-gradient">50+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
-              </div>
-            </div>
-          </div>
+          {/* CENTER COLUMN: Stats/Profile */}
+          <motion.div
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    transition={{ type: "spring", stiffness: 300 }}
+    className="bg-[#E5E0D8] border border-gray-200 rounded-xl shadow-md p-6 space-y-4 col-span-1"
+  >
+    <h3 className="text-xl font-semibold text-center text-[#CB0404] mb-2">
+      Highlights
+    </h3>
 
-          {/* Education Card */}
-          <div className="space-y-6">
-            <Card className="card-glass p-8 hover:shadow-glow transition-all duration-500">
+    <ul className="space-y-3 text-sm text-gray-700">
+      <li className="flex items-start gap-2">
+        <span className="text-[#CB0404] font-bold">➤</span>
+        Designer at <span className="font-medium">Apex Circle</span> & <span className="font-medium">InnovateX</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-[#CB0404] font-bold">➤</span>
+        Founder of <span className="font-medium">Digital Dominators</span> community
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-[#CB0404] font-bold">➤</span>
+        Evangelist at <span className="font-medium">Hack4Bengal</span>, <span className="font-medium">Binary</span>, and <span className="font-medium">StatusCode2</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-[#CB0404] font-bold">➤</span>
+        GDSC JISCE — Former Design Lead (2023)
+      </li>
+    </ul>
+
+    <div className="space-y-1 text-center">
+      <p className="text-sm text-gray-600 italic">“My role is about innovation, collaboration, and community-first design.”</p>
+      <img
+        src="/assets/udity-profile.jpg"
+        alt="Udity"
+        className="w-20 h-20 mx-auto rounded-full object-cover border border-gray-300 mt-4"
+      />
+    </div>
+  </motion.div>
+</motion.div>
+
+
+          {/* RIGHT COLUMN: Cards */}
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-6 col-span-1"
+          >
+            {/* Education */}
+            <Card className="bg-[#E5E0D8] p-6 border border-gray-200 shadow-md hover:shadow-xl transition-all space-y-4">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/20 text-primary">
-                  <GraduationCap className="w-8 h-8" />
+                <div className="p-3 rounded-full bg-[#CB0404]/10 text-[#CB0404]">
+                  <GraduationCap className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Education</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="font-medium text-primary">B.Tech in Computer Science</h4>
-                      <p className="text-muted-foreground">JIS College of Engineering</p>
+                  <h3 className="text-lg font-semibold text-[#CB0404]">B.Tech in Computer Science</h3>
+                  <p className="text-sm text-gray-600">JIS College of Engineering</p>
+                  <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>Graduation: 2026</span>
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>Graduation: 2026</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        <span>Kolkata, India</span>
-                      </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-4 h-4" />
+                      <span>Kolkata, India</span>
                     </div>
                   </div>
                 </div>
               </div>
             </Card>
 
-            {/* Philosophy Card */}
-            <Card className="card-glass p-8 hover:shadow-glow transition-all duration-500">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-foreground">My Philosophy</h3>
-                <blockquote className="text-lg italic text-muted-foreground border-l-4 border-primary pl-4">
-                  "Great design is not just about how it looks, but how it works. 
-                  I believe in creating digital experiences that are not only beautiful 
-                  but also intuitive, accessible, and meaningful."
-                </blockquote>
-              </div>
+            {/* Philosophy */}
+            <Card className="bg-[#E5E0D8] p-6 border border-gray-200 shadow-md hover:shadow-xl transition-all space-y-4">
+              <h3 className="text-lg font-semibold text-[#CB0404]">My Philosophy</h3>
+              <blockquote className="text-md italic text-gray-600 border-l-4 border-[#CB0404] pl-4">
+                “Design isn’t just what it looks like or feels like—it’s how it works. I believe in building tech that’s beautiful, intuitive, and meaningful.”
+              </blockquote>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

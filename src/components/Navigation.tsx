@@ -50,16 +50,16 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+  {navItems.map((item) => (
+    <button
+      key={item.label}
+      onClick={() => scrollToSection(item.href)}
+      className="text-muted-foreground hover:text-[#CB0404] transition-colors duration-300 font-medium"
+    >
+      {item.label}
+    </button>
+  ))}
+</div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
