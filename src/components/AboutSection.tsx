@@ -17,7 +17,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I'm a passionate <span className="text-primary font-semibold">B.Tech Computer Science student</span> with 
+                I'm a passionate <span className="text-primary font-semibold">B.Tech Computer Science student 4th year</span> with 
                 an insatiable curiosity for creating digital experiences that seamlessly blend functionality with aesthetics. 
                 My journey in tech is driven by the belief that great design and robust code can transform how people 
                 interact with technology.
