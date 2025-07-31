@@ -67,8 +67,8 @@ const BouncingLogos: React.FC = () => {
           if (dist < 100) {
             const angle = Math.atan2(dy, dx);
             const force = (100 - dist) / 100;
-            p.vx += Math.cos(angle) * force * 0.4;
-            p.vy += Math.sin(angle) * force * 0.4;
+            p.vx += Math.cos(angle) * force * 0.2;
+            p.vy += Math.sin(angle) * force * 0.2;
           }
         }
 
