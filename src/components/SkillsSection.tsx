@@ -27,8 +27,7 @@ const SkillsSection = () => {
       icon: Layers,
       color: "text-accent",
       skills: [
-        "Blender", "Spline", "Three.js", "WebGL", 
-        "3D Modeling", "Animation", "Interactive Design"
+        "Blender", "Spline", "Three.js","Interactive Design"
       ]
     },
     {
@@ -37,17 +36,17 @@ const SkillsSection = () => {
       color: "text-primary",
       skills: [
         "Java", "C++", "MySQL", "Git", "GitHub", 
-        "Flask", "Python", "Version Control"
+        , "Version Control"
       ]
     }
   ];
 
   // Extended skill list for infinite scroll
   const scrollingSkills = [
-    "React", "JavaScript", "TypeScript", "Next.js", "Tailwind CSS", 
+    "React", "JavaScript", "TypeScript", "Tailwind CSS", 
     "Figma", "Adobe XD", "Blender", "Three.js", "Node.js",
     "Python", "Java", "C++", "Git", "GitHub", "Framer Motion",
-    "Spline", "WebGL", "MySQL", "Flask", "Canva", "Bootstrap"
+    "Spline", "MySQL", "Canva", "Bootstrap"
   ];
 
   return (
@@ -136,7 +135,7 @@ const SkillsSection = () => {
             {[
               { skill: "Frontend Development", level: 90 },
               { skill: "UI/UX Design", level: 85 },
-              { skill: "React & Next.js", level: 88 },
+              { skill: "React JS", level: 88 },
               { skill: "3D & Animation", level: 75 },
               { skill: "Brand Design", level: 80 },
               { skill: "Community Leadership", level: 92 }

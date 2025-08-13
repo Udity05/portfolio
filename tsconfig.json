@@ -9,11 +9,18 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
     "noImplicitAny": false,
     "noUnusedParameters": false,
     "skipLibCheck": true,
     "allowJs": true,
     "noUnusedLocals": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "types": ["@studio-freight/lenis"]
   }
 }

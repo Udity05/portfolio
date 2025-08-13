@@ -8,7 +8,7 @@ const ProjectsSection = () => {
     {
       title: "SkillBoom+",
       description: "A comprehensive course platform designed to enhance learning experiences with modern UI/UX patterns. Built with React and enhanced with smooth animations using Framer Motion.",
-      image: "/api/placeholder/600/400",
+      image: "/assets/education.jpg",
       tech: ["React", "Tailwind CSS", "Framer Motion", "LocalStorage"],
       category: "Web Application",
       role: "Full-Stack Developer & Designer",
@@ -18,31 +18,30 @@ const ProjectsSection = () => {
         "Modern dashboard with data visualization",
         "Smooth animations and micro-interactions"
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Udity05/SkillBoom-",
       color: "primary"
     },
     {
       title: "Herbiary",
-      description: "A virtual Ayurvedic garden that combines traditional knowledge with modern technology. Users can explore medicinal plants through an interactive 3D interface.",
-      image: "/api/placeholder/600/400",
-      tech: ["React", "Flask", "Three.js", "Python"],
-      category: "3D Web Experience",
+      description: "A virtual Ayurvedic garden that combines traditional knowledge with modern technology. Users can explore medicinal plants through an interactive interface.",
+      image: "/assets/plant.jpg",
+      tech: ["React", "Flask"],
+      category: "Ayurvedic Garden",
       role: "Frontend Developer & 3D Designer",
       features: [
-        "Interactive 3D plant models with detailed information",
+        "Plant models with detailed information",
         "Ayurvedic medicine knowledge base",
         "Plant identification through visual search",
         "Educational content with rich media"
       ],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Udity05/Herbiary",
       color: "secondary"
     },
     {
       title: "0xKid",
       description: "Gamified learning platform for kids that makes education fun and engaging. Features interactive games and challenges designed to promote learning through play.",
-      image: "/api/placeholder/600/400",
+      image: "/assets/game.jpg",
       tech: ["React", "Phaser.js", "Node.js", "MongoDB"],
       category: "Educational Game",
       role: "Game Developer & UI Designer",
@@ -52,8 +51,7 @@ const ProjectsSection = () => {
         "Adaptive learning algorithms",
         "Colorful, kid-friendly interface design"
       ],
-      liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/K-Nishant-18/0xKid",
       color: "accent"
     }
   ];
@@ -113,7 +111,13 @@ const ProjectsSection = () => {
               >
                 <div className={`grid lg:grid-cols-2 gap-8 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                   {/* Project Image */}
-                  <div className={`relative overflow-hidden rounded-lg ${!isEven ? 'lg:col-start-2' : ''}`}>
+                  <div className={`relative  rounded-lg ${!isEven ? 'lg:col-start-2' : ''}`}>
+                    <img
+    src={project.image}
+    alt={project.title}
+    className="w-full h-full object-cover"
+  />
+
                     <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-90`}></div>
                     <div className="aspect-video bg-muted flex items-center justify-center text-muted-foreground">
                       <Play className="w-16 h-16" />
@@ -174,10 +178,7 @@ const ProjectsSection = () => {
                         className={`btn-glow bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:from-primary/90 hover:to-secondary/90`}
                         asChild
                       >
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </a>
+          
                       </Button>
                       <Button 
                         variant="outline" 

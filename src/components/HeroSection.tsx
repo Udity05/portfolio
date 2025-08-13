@@ -2,6 +2,9 @@ import React from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import BouncingLogos from "@/components/BouncingLogos";
+import CurvedLoop from "@/components/ui/curvedloop";
+import SplashCursor from '@/components/ui/SplashCursor';
+
 
 const containerVariants = {
   hidden: {},
@@ -20,7 +23,7 @@ const itemVariants = {
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen bg-[#1a1a1a] text-white overflow-hidden">
-      
+      <SplashCursor/>
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <BouncingLogos />
       </div>
@@ -93,10 +96,23 @@ const HeroSection = () => {
         />
       </motion.div>
 
+  <div className="absolute top-[10%] left-0 w-full z-0">
+  <CurvedLoop
+    marqueeText="Frontend Dev • Designer • UB • "
+    speed={2}
+    curveAmount={300}
+    className="text-[#CB0404] opacity-30 "
+    direction="left"
+    interactive={true}
+  />
+</div>
+
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-white z-10 animate-bounce">
         <p className="text-xs mb-1">Scroll down</p>
         <span className="text-lg">↓</span>
       </div>
+
+      
     </section>
   );
 };

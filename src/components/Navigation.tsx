@@ -18,7 +18,6 @@ const Navigation = () => {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
@@ -67,9 +66,11 @@ const Navigation = () => {
               variant="outline" 
               size="sm"
               className="btn-glow border-primary/50 text-primary hover:bg-primary/10"
-            >
+            asChild>
+              <a href="/assets/Udity_CV_Cogni.pdf" download>
               <Download className="w-4 h-4 mr-2" />
               Resume
+              </a>
             </Button>
           </div>
 

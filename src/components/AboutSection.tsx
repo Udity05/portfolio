@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Calendar, MapPin } from "lucide-react";
 import { motion, Variants } from "framer-motion";
-import udityProfile from "/assets/portfolio_imgae_bg-remove.png";
+import profilePic from "/assets/Red-head.webp";
+import PixelTransition from "./ui/PixelTransition";
+import SplashCursor from "./ui/SplashCursor";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -37,19 +39,20 @@ const AboutSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="flex-1 bg-white/30 backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:shadow-[0_0_25px_#CB0404] transition"
+          className="flex-1 bg-[#141111ff] backdrop-blur-lg rounded-2xl p-8 shadow-xl hover:shadow-[0_0_25px_#CB0404] transition"
         >
           <h3 className="text-2xl font-bold text-[#CB0404] mb-4">Who am I?</h3>
-          <p className="text-lg text-gray-800 mb-4">
+          <p className="text-lg text-white mb-4">
             I’m <span className="font-semibold text-[#CB0404]">Udity Banerjee</span>, a B.Tech Computer Science student, passionate about merging
             design with development. I specialize in building elegant frontend experiences with a blend of
             creativity and code.
           </p>
-          <p className="text-lg text-gray-700">
-            From founding <span className="font-medium text-[#CB0404]">Digital Dominators</span> to leading at <span className="font-medium">GDSC</span> and evangelizing tech through events like Hack4Bengal,
+          <p className="text-lg text-white">
+            From founding <span className="font-medium text-[#CB0404]">Digital Dominators</span> to leading at <span className="font-medium">GDSC</span> and evangelizing tech through events like Binary, Hack4Bengal, StatusCode2
             I strive to inspire and innovate.
           </p>
         </motion.div>
+
 
         <motion.div
           variants={fadeInUp}
@@ -58,17 +61,37 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="flex-1 text-center"
         >
-          <div className="relative w-full max-w-sm mx-auto">
-            <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-[#CB0404]/20 blur-xl animate-pulse"></div>
-            <div className="absolute -bottom-8 -right-8 w-20 h-20 rounded-full bg-[#CB0404]/10 blur-2xl animate-pulse delay-100"></div>
-            <img
-              src={udityProfile}
-              alt="Udity"
-              className="w-72 h-72 mx-auto rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 border-4 border-[#CB0404] shadow-lg"
-            />
-            <h3 className="text-xl font-semibold text-[#CB0404] mt-4">Udity Banerjee</h3>
-            <p className="text-sm text-gray-600">Frontend Dev • Designer • Community Enthusiast</p>
+          <div className="relative w-full max-w-lg mx-auto"> {/* changed max-w-sm to max-w-lg */}
+            <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-[#CB0404]/20 blur-xl animate-pulse"></div>
+            <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full bg-[#CB0404]/10 blur-2xl animate-pulse delay-100"></div>
+<PixelTransition
+  firstContent={
+    <img
+      src={profilePic}
+      alt="default pixel transition content, a cat!"
+      style={{ width: "100%", height: "100%", objectFit: "fill" }}
+    />
+  }
+  secondContent={
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "grid",
+        placeItems: "center",
+        backgroundColor: "#111"
+      }}
+    >
+      <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffffff" }}>Hi! Udity here</p>
+    </div>
+  }
+  gridSize={12}
+  pixelColor='#141111ff'
+  animationStepDuration={0.4}
+  className="custom-pixel-card"
+/>
           </div>
+
         </motion.div>
 
         <motion.div
@@ -78,14 +101,14 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="flex-1 space-y-6"
         >
-          <Card className="p-6 rounded-xl bg-white/40 backdrop-blur-xl border border-gray-200 hover:shadow-[0_0_20px_#CB0404] transition">
+          <Card className="p-6 rounded-xl bg-[#141111ff] backdrop-blur-xl border border-gray-200 hover:shadow-[0_0_20px_#CB0404] transition">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-[#CB0404]/10 text-[#CB0404] rounded-full">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-[#CB0404]">Education</h4>
-                <p className="text-sm text-gray-700">B.Tech CSE, JIS College of Engineering</p>
+                <p className="text-sm text-white">B.Tech CSE, JIS College of Engineering</p>
                 <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
@@ -100,9 +123,9 @@ const AboutSection = () => {
             </div>
           </Card>
 
-          <Card className="p-6 rounded-xl bg-white/40 backdrop-blur-xl border border-gray-200 hover:shadow-[0_0_20px_#CB0404] transition">
+          <Card className="p-6 rounded-xl bg-[#141111ff] backdrop-blur-xl border border-gray-200 hover:shadow-[0_0_20px_#CB0404] transition">
             <h4 className="text-lg font-semibold text-[#CB0404] mb-2">Philosophy</h4>
-            <blockquote className="text-gray-700 italic border-l-4 border-[#CB0404] pl-4">
+            <blockquote className="text-white italic border-l-4 border-[#CB0404] pl-4">
               “Design isn’t just what it looks like or feels like—it’s how it works. I believe in building digital
               interfaces that feel natural, aesthetic, and useful.”
             </blockquote>
