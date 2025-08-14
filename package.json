@@ -40,6 +40,7 @@
     "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@studio-freight/lenis": "^1.0.42",
+    "@swc/core": "^1.3.107",
     "@tanstack/react-query": "^5.56.2",
     "@tsparticles/engine": "^3.8.1",
     "animejs": "^4.1.1",
@@ -78,6 +79,7 @@
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
@@ -93,6 +95,6 @@
     "vite": "^5.4.1"
   },
   "engines": {
-  "node": "20.x"
-}
+    "node": "18.x"
+  }
 }
