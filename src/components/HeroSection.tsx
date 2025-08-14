@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import BouncingLogos from "@/components/BouncingLogos";
 import CurvedLoop from "@/components/ui/curvedloop";
-import SplashCursor from '@/components/ui/SplashCursor';
+import SplashCursor from "@/components/ui/SplashCursor";
 
 const containerVariants = {
   hidden: {},
@@ -19,9 +19,9 @@ const itemVariants = {
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen bg-[#1a1a1a] text-white overflow-hidden">
+    <section className="relative w-full min-h-screen bg-[#1a1a1a] text-white overflow-hidden flex flex-col">
       <SplashCursor />
-      
+
       {/* Background Bouncing Logos */}
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <BouncingLogos />
@@ -33,12 +33,14 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full flex items-center justify-start px-4 sm:px-8 md:px-12 md:pl-[150px]">
+      <div className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between flex-1 px-4 sm:px-8 md:px-12 gap-10 lg:gap-16">
+        
+        {/* Text Box */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="backdrop-blur-xl bg-white/10 border border-white/20 p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl max-w-full sm:max-w-xl"
+          className="backdrop-blur-xl bg-white/10 border border-white/20 p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl max-w-full sm:max-w-xl text-center lg:text-left"
         >
           <motion.h1
             variants={itemVariants}
@@ -55,7 +57,7 @@ const HeroSection = () => {
           </motion.p>
 
           {/* Social Icons */}
-          <motion.div variants={itemVariants} className="flex gap-4 sm:gap-6">
+          <motion.div variants={itemVariants} className="flex justify-center lg:justify-start gap-4 sm:gap-6">
             <a
               href="https://github.com/Udity05"
               target="_blank"
@@ -80,23 +82,21 @@ const HeroSection = () => {
             </a>
           </motion.div>
         </motion.div>
+
+        {/* Portfolio Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="w-40 h-40 sm:w-52 sm:h-52 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0"
+        >
+          <img
+            src="/assets/pic-no-bg.png"
+            alt="Udity"
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+          />
+        </motion.div>
       </div>
-
-      {/* Portfolio Image */}
-      <motion.div
-  initial={{ opacity: 0, y: 100 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1.2, ease: "easeOut" }}
-  className="absolute top-1/3 right-[200px] -translate-y-1/2 z-10 w-[250px] h-[250px] rounded-full overflow-hidden border-4 border-white shadow-lg"
->
-  <img
-    src="/assets/pic-no-bg.png"
-    alt="Udity"
-    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-  />
-</motion.div>
-
-
 
       {/* Curved Loop */}
       <div className="absolute top-[10%] left-0 w-full z-0">
